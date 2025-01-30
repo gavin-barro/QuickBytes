@@ -1,1 +1,1 @@
-# cs343_group_proj
+# CS 343: Final Project
