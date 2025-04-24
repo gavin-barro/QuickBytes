@@ -14,12 +14,6 @@
     /* need to add spacing */
 }
 
-#qblogo {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
 h1 {
     text-align: center;
     padding-top: 1%;
@@ -27,4 +21,19 @@ h1 {
 
 #subtitle, #tagline {
     text-align: center;
+}
+
+/* Logo */
+#qblogo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 200px;
+    width: 200px;
+}
+
+/* Food gallery images */
+#food, #drink, #dessert {
+    height: 150px;
+    width: 150px;
 }
