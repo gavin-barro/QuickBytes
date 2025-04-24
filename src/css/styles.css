@@ -1,0 +1,30 @@
+.menu {
+    overflow: hidden;
+    background-color: #33006F;
+    position: fixed;
+    padding: 0.5%;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+.menu a {
+    color: white;
+    padding: 1%;
+    /* need to add spacing */
+}
+
+#qblogo {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 1%;
+}
+
+#subtitle {
+    text-align: center;
+}
