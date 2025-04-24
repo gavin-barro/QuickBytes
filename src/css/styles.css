@@ -31,9 +31,20 @@ h1 {
     height: 200px;
     width: 200px;
 }
-
-/* Food gallery images */
+/* 
 #food, #drink, #dessert {
+    height: 150px;
+    width: 150px;
+} */
+
+#gallery {
+    display: flex;
+    flex-direction: row;   
+    justify-content: center; 
+    gap: 1rem;             
+}
+
+.gallery-img {
     height: 150px;
     width: 150px;
 }
