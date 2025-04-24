@@ -25,6 +25,6 @@ h1 {
     padding-top: 1%;
 }
 
-#subtitle {
+#subtitle, #tagline {
     text-align: center;
 }
