@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,5 +58,90 @@
             Price: $6.50
         </div>
     </main>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBytes - Food</title>
+    <link rel="stylesheet" href="/src/css/food.css">
+</head>
+<body>
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="drinks.html">Drinks</a>
+        <a href="food.html">Food</a>
+        <a href="desserts.html">Dessert</a>
+        <button type="button" id="add_tab">+</button>
+    </nav>
+    <a href="index.html">
+        <img id="qblogo" src="/images/logo.png" alt="QuickBytes Logo" height="150" width="150">
+    </a>
+    <main>
+        <h2>Choose Your Meal</h2>
+
+        <button type="button" class="food-option" data-food="Cheeseburger" data-price="6.50">Cheeseburger<br>Price: $6.50</button>
+
+        <button type="button" class="food-option" data-food="Grilled Chicken Sandwich" data-price="7.00">Grilled Chicken Sandwich<br>Price: $7.00</button>
+
+        <button type="button" class="food-option" data-food="Caesar Salad" data-price="5.50">Caesar Salad<br>Price: $5.50</button>
+
+        <button type="button" class="food-option" data-food="Pepperoni Pizza Slice" data-price="3.50">Pepperoni Pizza Slice<br>Price: $3.50</button>
+
+        <button type="button" class="food-option" data-food="Fish and Chips" data-price="8.00">Fish and Chips<br>Price: $8.00</button>
+
+        <button type="button" class="food-option" data-food="Veggie Wrap" data-price="6.00">Veggie Wrap<br>Price: $6.00</button>
+
+        <button type="button" class="food-option" data-food="Chicken Tenders" data-price="5.00">Chicken Tenders<br>Price: $5.00</button>
+
+        <button type="button" class="food-option" data-food="Club Sandwich" data-price="6.50">Club Sandwich<br>Price: $6.50</button>
+
+        <form id="build-burger-form" action="/submit-order" method="POST" style="display: none;">
+            <h3>Build Your Own Burger</h3>
+
+            <label for="burger-type">Choose a Burger:</label>
+            <select id="burger-type" name="burger">
+                <option value="classic">Classic</option>
+                <option value="cheese">Cheeseburger</option>
+                <option value="veggie">Veggie</option>
+            </select>
+
+            <p>Add Toppings:</p>
+            <label><input type="checkbox" name="lettuce" value="lettuce"> Lettuce</label>
+            <label><input type="checkbox" name="tomato" value="tomato"> Tomato</label>
+            <label><input type="checkbox" name="onions" value="onions"> Onions</label>
+            <label><input type="checkbox" name="extra_cheese" value="cheese"> Extra Cheese</label>
+
+            <label for="instructions">Special Instructions:</label>
+            <textarea id="instructions" name="instructions" rows="3" placeholder="No pickles, please!"></textarea>
+
+            <button type="submit" value="Place Order"> </button>
+        </form>
+    </main>
+
+    <script>
+        // JavaScript to handle button clicks and show the build-your-own-burger form
+        document.querySelectorAll('.food-option').forEach(button => {
+            button.addEventListener('click', (event) => {
+                // Get food data from the button's attributes
+                const foodName = event.target.getAttribute('data-food');
+                const foodPrice = event.target.getAttribute('data-price');
+                
+                // Show the "Build Your Own Burger" form
+                const form = document.getElementById('build-burger-form');
+                form.style.display = 'block';  // Make the form visible
+
+                // Update the burger type dropdown in the form with the selected food
+                const burgerType = document.getElementById('burger-type');
+                burgerType.value = foodName;  // Set burger type to selected food name
+
+                // Optionally, display a message or update other form fields (e.g., price)
+                alert(`You selected: ${foodName} - Price: $${foodPrice}`);
+            });
+        });
+    </script>
 </body>
 </html>
