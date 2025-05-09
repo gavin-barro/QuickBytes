@@ -1,0 +1,99 @@
+/* === Base Styles (Desktop First) === */
+
+.menu {
+    overflow: hidden;
+    background-color: #33006F;
+    position: fixed;
+    padding: 0.5%;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+.menu a {
+    color: white;
+    padding: 1%;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 1%;
+}
+
+#subtitle,
+#tagline {
+    text-align: center;
+}
+
+/* Logo */
+#qblogo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 200px;
+    width: 200px;
+}
+
+#gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery-img {
+    height: 150px;
+    width: 150px;
+}
+
+/* === Mobile Overrides (≤767px) === */
+/* Milestone 2: Responsive layout for small screens */
+
+@media screen and (max-width: 767px) {
+
+    .menu {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        padding: 1.5% 0;
+    }
+
+    #qblogo {
+        position: static;
+        display: block;
+        margin: 1rem auto;
+        height: 150px;
+        width: 150px;
+    }
+
+    #gallery {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .gallery-img {
+        height: 120px;
+        width: 120px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        padding-top: 2rem;
+    }
+
+    #subtitle,
+    #tagline {
+        padding: 0 1rem;
+    }
+
+    main {
+        padding-top: 1rem;
+    }
+}

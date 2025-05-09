@@ -1,0 +1,112 @@
+.menu {
+    overflow: hidden;
+    background-color: #33006F;
+    position: fixed;
+    padding: 0.5%;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+.menu a {
+    color: white;
+    padding: 1%;
+}
+
+#qblogo {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    flex-direction: column;
+    padding: 1vh 3vh 2% 3vh;
+    margin-top: 6vh;
+    width: 80%;
+    gap: 2vh;
+}
+
+div {
+    border: 2px solid black;
+    padding: 1vh 3vh;
+    margin-top: 2vh;
+    background-color: lightgray;
+    width: fit-content;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2vh;
+}
+
+.food-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vh;
+}
+
+h2 {
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-decoration-line: underline;
+}
+
+.food-option {
+    border: 2px solid black;
+    padding: 1vh 2vh;
+    background-color: lightgray;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* ===== Milestone 2: Responsive layout for small screens (≤767px) ===== */
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 1.1em;
+    }
+
+    .menu {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: none;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        padding: 1.5em 0;
+        display: block;
+    }
+
+    #qblogo {
+        position: static;
+        display: block;
+        margin: 1rem auto;
+        height: 120px;
+        width: 120px;
+    }
+
+    main {
+        padding-top: 1rem;
+    }
+
+    #gallery,
+    #gavin-favorites,
+    #austin-favorites,
+    #hunter-favorites {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .gallery-img,
+    .favorite-img {
+        max-width: 100%;
+        height: auto;
+    }
+}

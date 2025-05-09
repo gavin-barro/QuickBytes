@@ -1,0 +1,94 @@
+.menu {
+    overflow: hidden;
+    background-color: #33006F;
+    position: fixed;
+    padding: 0.5%;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+
+.menu a {
+    color: white;
+    padding: 1%;
+}
+
+main {
+    padding-top: 20px;
+
+}
+
+#qblogo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 200px;
+    width: 200px;
+}
+
+#gallery,
+#gavin-favorites,
+#austin-favorites,
+#hunter-favorites {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery-img,
+.favorite-img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+/* ===== Milestone 2: Responsive layout for small screens (≤767px) ===== */
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 1.1em;
+    }
+
+    .menu {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: none;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        padding: 1.5em 0;
+        display: block;
+    }
+
+    #qblogo {
+        position: static;
+        display: block;
+        margin: 1rem auto;
+        height: 120px;
+        width: 120px;
+    }
+
+    main {
+        padding-top: 1rem;
+    }
+
+    #gallery,
+    #gavin-favorites,
+    #austin-favorites,
+    #hunter-favorites {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .gallery-img,
+    .favorite-img {
+        max-width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBytes - Food</title>
+    <link rel="stylesheet" href="../css/food.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <a href="../../index.html">Home</a>
+            <a href="drinks.html">Drinks</a>
+            <a href="food.html">Food</a>
+            <a href="desserts.html">Dessert</a>
+            <button type="button" id="add_tab">+</button>
+        </nav>
+        <a href="../../index.html">
+            <img id="qblogo" src="../../images/logo.png" alt="QuickBytes Logo" height="150" width="150">
+        </a>
+    </header>
+    <main>
+        <h1 class="section-title">Choose Your Meal</h1>
+
+        <div class="food-options">
+            <button type="button" class="food-option" data-food="Cheeseburger" data-price="6.50">Cheeseburger<br>Price:
+                $6.50</button>
+            <button type="button" class="food-option" data-food="Grilled Chicken Sandwich" data-price="7.00">Grilled
+                Chicken Sandwich<br>Price: $7.00</button>
+            <button type="button" class="food-option" data-food="Caesar Salad" data-price="5.50">Caesar Salad<br>Price:
+                $5.50</button>
+            <button type="button" class="food-option" data-food="Pepperoni Pizza Slice" data-price="3.50">Pepperoni
+                Pizza Slice<br>Price: $3.50</button>
+            <button type="button" class="food-option" data-food="Fish and Chips" data-price="8.00">Fish and
+                Chips<br>Price: $8.00</button>
+            <button type="button" class="food-option" data-food="Veggie Wrap" data-price="6.00">Veggie Wrap<br>Price:
+                $6.00</button>
+            <button type="button" class="food-option" data-food="Chicken Tenders" data-price="5.00">Chicken
+                Tenders<br>Price: $5.00</button>
+            <button type="button" class="food-option" data-food="Club Sandwich" data-price="6.50">Club
+                Sandwich<br>Price: $6.50</button>
+        </div>
+
+        <div id="burgerFormContainer">
+            <h2>Build Your Own Burger</h2>
+            <form id="burgerForm">
+                <h3>Bun Type: Currently unavailable</h3>
+                <!--Form was presenting error because it didn't lead anywhere yet-->
+                <!--<label> Bun Type:
+                    <select name="bun">
+                        <option value="white">White</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                    </select>
+                </label><br><br>-->
+
+                <h3>Toppings: Currently unavailable</h3>
+
+                <!--Form was presenting error because it didn't lead anywhere yet-->
+                <!--<label>Toppings:</label><br>
+                <input type="checkbox" name="lettuce" value="lettuce"><label for="Lettuce"> Lettuce</label><br>
+                <input type="checkbox" name="tomato" value="tomato"><label for="Tomato">Tomato</label> <br>
+                <input type="checkbox" name="onion" value="onion"><label for="Onion">Onion</label> <br>
+                <input type="checkbox" name="cheese" value="cheese"><label for="Cheese">Cheese</label> <br><br>-->
+
+                <button type="submit" class="place-order">Place Order</button>
+            </form>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
