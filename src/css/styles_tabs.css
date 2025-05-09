@@ -44,6 +44,24 @@ main {
     object-fit: cover;
 }
 
+.popular-choices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    justify-items: center; /* Center items horizontally */
+    padding: 20px; 
+}
+
+.popular-choices figure {
+    margin: 0;
+    text-align: center;
+}
+
+.popular-choices img.favorite-img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* ===== Milestone 2: Responsive layout for small screens (≤767px) ===== */
 @media screen and (max-width: 767px) {
     body {
