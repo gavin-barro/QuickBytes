@@ -23,49 +23,66 @@
     </header>
     <main>
         <h1> What Would You Like to Order?</h1>
-
         <h2> Here Are Some of Our Most Popular Choices: </h2>
         <div class="popular-choices">
-            <figure>
-                <img class="favorite-img" src="../../images/Foods/burger.jpg" alt="Image_of_Burger">
-                <figcaption><a href="food.html">Burger</a></figcaption>
-            </figure>
-            <figure>
-                <img class="favorite-img" src="../../images/Drinks/fruit_punch.avif" alt="Image_of_Fruit_Punch">
-                <figcaption><a href="drinks.html">Fruit Punch</a></figcaption>
-            </figure>
-            <figure>
-                <img class="favorite-img" src="../../images/Desserts/apple_pie.jpg" alt="Image_of_Apple_Pie">
-                <figcaption><a href="dessert.html">Apple Pie</a></figcaption>
-            </figure>
-            <figure>
-                <img class="favorite-img" src="../../images/Foods/pepperoni_pizza.jpg" alt="Image_of_Pizza">
-                <figcaption><a href="food.html">Pepperoni Pizza</a></figcaption>
-            </figure>
-            <figure>
-                <img class="favorite-img" src="../../images/Drinks/water.jpg" alt="Image_of_Water">
-                <figcaption><a href="drinks.html">Water</a></figcaption>
-            </figure>
-            <figure>
-                <img class="favorite-img" src="../../images/Foods/steak.avif" alt="Image_of_Steak">
-                <figcaption><a href="dessert.html">Steak</a></figcaption>
-            </figure>
-            <figure>
-                <img class="favorite-img" src="../../images/Drinks/sprite.webp" alt="Image_of_Sprite">
-                <figcaption><a href="drinks.html">Sprite</a></figcaption>
-            </figure>
-            <figure>
-                <img class="favorite-img" src="../../images/Foods/club_sandwich.jpg" alt="Image_of_Sandwithc">
-                <figcaption><a href="food.html">Club Sandwich</a></figcaption>
-            </figure>
-            <figure>
-                <img class="favorite-img" src="../../images/Desserts/brownie.jpg" alt="Image_of_Brownie">
-                <figcaption><a href="dessert.html">Brownie</a></figcaption>
-            </figure>
+            <div class="popular-choice">
+                <img src="../../images/Foods/burger.jpg" alt="Image_of_Burger" class="food-img">
+                <h3>Burger</h3>
+                <p>Juicy beef patty with lettuce, tomato, and mayo on a toasted bun.</p>
+                <button type="button" class="order-btn" data-food="Burger" data-price="6.50">Order - $6.50</button>
+            </div>
+            <div class="popular-choice">
+                <img src="../../images/Drinks/fruit_punch.avif" alt="Image_of_Fruit_Punch" class="food-img">
+                <h3>Fruit Punch</h3>
+                <p>A vibrant blend of tropical fruit juices, sweet and tangy.</p>
+                <button type="button" class="order-btn" data-food="Fruit Punch" data-price="2.50">Order - $2.50</button>
+            </div>
+            <div class="popular-choice">
+                <img src="../../images/Desserts/apple_pie.jpg" alt="Image_of_Apple_Pie" class="food-img">
+                <h3>Apple Pie</h3>
+                <p>Classic apple pie with a flaky crust, served warm.</p>
+                <button type="button" class="order-btn" data-food="Apple Pie" data-price="2.00">Order - $2.00</button>
+            </div>
+            <div class="popular-choice">
+                <img src="../../images/Foods/pepperoni_pizza.jpg" alt="Image_of_Pizza" class="food-img">
+                <h3>Pepperoni Pizza</h3>
+                <p>A classic slice with tangy tomato sauce, mozzarella, and crispy pepperoni.</p>
+                <button type="button" class="order-btn" data-food="Pepperoni Pizza" data-price="3.50">Order - $3.50</button>
+            </div>
+            <div class="popular-choice">
+                <img src="../../images/Drinks/water.jpg" alt="Image_of_Water" class="food-img">
+                <h3>Water</h3>
+                <p>Refreshing, chilled purified water, served with or without ice.</p>
+                <button type="button" class="order-btn" data-food="Water" data-price="1.00">Order - $1.00</button>
+            </div>
+            <div class="popular-choice">
+                <img src="../../images/Foods/steak.avif" alt="Image_of_Steak" class="food-img">
+                <h3>Steak</h3>
+                <p>Juicy grilled steak, cooked to your liking, served with a side.</p>
+                <button type="button" class="order-btn" data-food="Steak" data-price="8.00">Order - $8.00</button>
+            </div>
+            <div class="popular-choice">
+                <img src="../../images/Drinks/sprite.webp" alt="Image_of_Sprite" class="food-img">
+                <h3>Sprite</h3>
+                <p>Lemon-lime soda, crisp and refreshing, served over ice.</p>
+                <button type="button" class="order-btn" data-food="Sprite" data-price="2.00">Order - $2.00</button>
+            </div>
+            <div class="popular-choice">
+                <img src="../../images/Foods/club_sandwich.jpg" alt="Image_of_Sandwich" class="food-img">
+                <h3>Club Sandwich</h3>
+                <p>Turkey, bacon, lettuce, tomato, and mayo on toasted bread.</p>
+                <button type="button" class="order-btn" data-food="Club Sandwich" data-price="6.50">Order - $6.50</button>
+            </div>
+            <div class="popular-choice">
+                <img src="../../images/Desserts/brownie.jpg" alt="Image_of_Brownie" class="food-img">
+                <h3>Brownie</h3>
+                <p>Fudgy chocolate brownie, served warm with powdered sugar.</p>
+                <button type="button" class="order-btn" data-food="Brownie" data-price="2.50">Order - $2.50</button>
+            </div>
         </div>
 
         <h2> Here Are Some of Our Favorites: </h2>
-        <!-- TODO: Clicking on these images should add to the cart not go to the food page, milestone 3 objective -->
+
         <h4> Austin's Favorites: </h4>
         <div id="austin-favorites">
             <figure>
