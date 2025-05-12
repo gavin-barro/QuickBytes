@@ -2,14 +2,11 @@ const foodItems = document.querySelectorAll(".order-btn");
 
 foodItems.forEach(item => {
     item.addEventListener("click", () => {
-        // Initialize order and total
         let food_items = [];
 
-        // Retrieve existing data if it exists
         if (localStorage.getItem("order")) {
             food_items = JSON.parse(localStorage.getItem("order"));
         }
-
 
         addItem(food_items, item);
     });
