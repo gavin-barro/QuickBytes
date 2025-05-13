@@ -90,6 +90,9 @@ function getImage(text) {
         case 'Cheeseburger':
             image_link = '../../images/Foods/burger.jpg';
             break;
+        case 'Veggie Wrap':
+            image_link = '../../images/Foods/veggie_wrap.jpg';
+            break;
         case 'Grilled Chicken Sandwich':
             image_link = '../../images/Foods/grilled_chicken_sandwich.jpg';
             break;
