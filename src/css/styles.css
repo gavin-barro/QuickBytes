@@ -179,6 +179,16 @@ p {
     color: #333;
 }
 
+.to-top button {
+    
+    background-color: #33006F;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
 
 /* === Mobile Overrides (≤767px) === */
 /* Milestone 2: Responsive layout for small screens */

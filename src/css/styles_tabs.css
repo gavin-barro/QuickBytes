@@ -189,6 +189,14 @@ main {
     border-bottom: 1px solid black;
 }
 
+#topbtn {
+    background-color: #33006F;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 /* ===== Milestone 2: Responsive layout for small screens (≤767px) ===== */
 @media screen and (max-width: 767px) {
     body {
