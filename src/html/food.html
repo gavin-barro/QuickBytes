@@ -28,10 +28,10 @@
 
         <div class="food-options">
             <div class="food-option">
-                <img src="../../images/Foods/burger.jpg" alt="Cheeseburger" class="food-img">
-                <h3>Cheeseburger</h3>
-                <p>Juicy beef patty with cheddar cheese, lettuce, tomato, and our special sauce on a toasted bun.</p>
-                <button type="button" id="cheeseburger" class="order-btn" data-food="Cheeseburger" data-price="6.50">Order - $6.50</button>
+                <img src="../../images/Foods/burger.jpg" alt="Burger" class="food-img">
+                <h3>Burger</h3>
+                <p>Juicy beef patty with on a toasted bun.</p>
+                <button type="button" id="cheeseburger" class="order-btn" data-food="Burger" data-price="5.00">Order - $5.00</button>
             </div>
             <div class="food-option">
                 <img src="../../images/Foods/grilled_chicken_sandwich.jpg" alt="Grilled Chicken Sandwich" class="food-img">
@@ -92,28 +92,35 @@
         <div id="burgerFormContainer">
             <h2>Build Your Own Burger</h2>
             <form id="burgerForm">
-                <h3>Bun Type: Currently unavailable</h3>
-                <!--Form was presenting error because it didn't lead anywhere yet-->
-                <!--<label> Bun Type:
-                    <select name="bun">
-                        <option value="white">White</option>
-                        <option value="wheat">Wheat</option>
-                        <option value="gluten-free">Gluten-Free</option>
+                <h3>Bun Type</h3>
+                <label>Bun Type:
+                    <select name="bun" id="bun">
+                        <option value="white" data-price="0.00">White (Included)</option>
+                        <option value="wheat" data-price="0.50">Wheat (+$0.50)</option>
+                        <option value="gluten-free" data-price="1.00">Gluten-Free (+$1.00)</option>
                     </select>
-                </label><br><br>-->
+                </label><br><br>
 
-                <h3>Toppings: Currently unavailable</h3>
+                <h3>Toppings</h3>
+                <label>Toppings:</label><br>
+                <input type="checkbox" name="lettuce" value="lettuce" data-price="0.50"><label for="lettuce"> Lettuce (+$0.50)</label><br>
+                <input type="checkbox" name="tomato" value="tomato" data-price="0.50"><label for="tomato"> Tomato (+$0.50)</label><br>
+                <input type="checkbox" name="onion" value="onion" data-price="0.50"><label for="onion"> Onion (+$0.50)</label><br>
+                <input type="checkbox" name="cheese" value="cheese" data-price="1.00"><label for="cheese"> Cheese (+$1.00)</label><br><br>
 
-                <!-- Form was presenting error because it didn't lead anywhere yet-->
-                <!--<label>Toppings:</label><br>
-                <input type="checkbox" name="lettuce" value="lettuce"><label for="Lettuce"> Lettuce</label><br>
-                <input type="checkbox" name="tomato" value="tomato"><label for="Tomato">Tomato</label> <br>
-                <input type="checkbox" name="onion" value="onion"><label for="Onion">Onion</label> <br>
-                <input type="checkbox" name="cheese" value="cheese"><label for="Cheese">Cheese</label> <br><br> -->
+                <h3>Fries</h3>
+                <label>Toppings:</label><br>
+                <input type="checkbox" name="fries" value="fries" data-price="2.00"><label for="fries"> Fries (+$2.00)</label><br>
+                <input type="checkbox" name="cheese-fries" value="cheese-fries" data-price="2.50"><label for="cheese-fries"> Cheese Fries (+$2.50)</label><br>
+                <input type="checkbox" name="bacon-cheese-fries" value="bacon-cheese-fries" data-price="3.00"><label for="bacon-cheese-fries"> Bacon Cheese Fries (+3.00)</label><br>
+
+                <p>Base Price: $5.00</p>
+                <p>Total Price: <span id="totalPrice">$5.00</span></p>
 
                 <button type="submit" class="place-order">Place Order</button>
             </form>
         </div>
+
         <script src="../js/order.js"></script>
         <p><a href="#top">Back to top ↑</a></p>
     </main>
