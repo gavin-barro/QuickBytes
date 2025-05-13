@@ -1,3 +1,22 @@
+body {
+    background-color: #D5CBAB;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    background-image: linear-gradient(to right, #33006F, #D5CBAB);
+    color: transparent;
+    background-clip: text;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 2vh;
+}
+
 .menu {
     overflow: hidden;
     background-color: #33006F;
@@ -125,6 +144,7 @@ main {
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 200px;
     transition: background-color 0.2s;
+    border-radius: 10px;
 }
 
 .popular-choice .food-img {
@@ -142,6 +162,7 @@ main {
     border: 2px solid black;
     padding: 1vh 2vh;
     background-color: lightgray;
+    border-radius: 5px;
     cursor: pointer;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 200px;
