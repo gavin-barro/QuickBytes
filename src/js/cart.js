@@ -253,7 +253,16 @@ function modified_burger(element) {
 
     // Item name and toppings
     const item_name1 = document.createElement('h1');
-    item_name1.textContent = 'Modified Burger: ' + element.toppings;
+    // item_name1.textContent = 'Modified Burger: ' + element.toppings;
+    item_name1.textContent = 'Modified Burger: ' + element.toppings
+        .split(',') // Split the string into an array at commas
+        .map(topping => 
+            topping
+            .split('-') // Split hyphenated words
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+            .join(' ') // Join hyphenated words with space
+        )
+        .join(', '); // Join toppings with comma and space
 
     // Item price
     const item_price1 = document.createElement('h2');
@@ -300,7 +309,15 @@ function modified_pizza(element) {
 
     // Item name and toppings
     const item_name1 = document.createElement('h1');
-    item_name1.textContent = 'Modified Pizza: ' + element.toppings;
+    item_name1.textContent = 'Modified Pizza: ' + element.toppings
+        .split(',') // Split the string into an array at commas
+        .map(topping => 
+            topping
+            .split('-') // Split hyphenated words
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+            .join(' ') // Join hyphenated words with space
+        )
+        .join(', '); // Join toppings with comma and space
 
     // Item price
     const item_price1 = document.createElement('h2');
