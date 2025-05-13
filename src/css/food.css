@@ -131,7 +131,7 @@ h2 {
 
 #formWrapper {
     display: flex;
-    gap: 40px; /* space between the forms */
+    gap: 40px;
     align-items: flex-start;
     margin-top: 20px;
 }
@@ -194,7 +194,7 @@ h2 {
 
     #formWrapper {
         display: flex;
-        gap: 40px; /* space between the forms */
+        gap: 40px; 
         align-items: flex-start;
         margin-top: 20px;
     }
