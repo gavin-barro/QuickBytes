@@ -2,9 +2,15 @@ const foodItems = document.querySelectorAll(".order-btn");
 
 foodItems.forEach(item => {
     item.addEventListener("click", () => {
-        const food_items = get_food_items();
+        const check = item.getAttribute("data-food");
+        console.log(check);
+        if ((check != "Food Menu") && (check != "Dessert Menu") && (check != "Drink Menu")) 
+        {
+            console.log('here');
+            const food_items = get_food_items();
 
-        add_item(food_items, item);
+            add_item(food_items, item);
+        }
     });
 });
 
