@@ -189,12 +189,15 @@ main {
     border-bottom: 1px solid black;
 }
 
-#topbtn {
+.to-top button {
     background-color: #33006F;
     color: white;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
 }
 
 /* ===== Milestone 2: Responsive layout for small screens (≤767px) ===== */
