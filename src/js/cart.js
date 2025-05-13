@@ -99,6 +99,7 @@ function getImage(text) {
         case 'Caesar Salad':
             image_link = '../../images/Foods/caesar_salad.jpg';
             break;
+        case 'mod_pizza':
         case 'Pepperoni Pizza':
             image_link = '../../images/Foods/pepperoni_pizza.jpg';
             break;
