@@ -130,3 +130,44 @@ body {
 .submit-btn:hover {
     background-color: #2c0059;
 }
+
+@media screen and (max-width: 768px) {
+
+    .menu {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        padding: 1.5% 0;
+    }
+
+    #qblogo {
+        position: static;
+        display: block;
+        margin: 1rem auto;
+        height: 150px;
+        width: 150px;
+    }
+
+    .cart-items,
+    .total {
+        width: 100%;
+    }
+
+    .cart-item,
+    .cart-total,
+    .cart-submit {
+        width: 100%;
+        height: auto;
+    }
+
+    .cart-img {
+        width: 100%;
+        height: auto;
+    }
+}
