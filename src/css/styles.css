@@ -1,10 +1,14 @@
 /* === Base Styles (Desktop First) === */
 
+body {
+    background-color: #D5CBAB;
+}
+
 .menu {
     overflow: hidden;
     background-color: #33006F;
     position: fixed;
-    padding: 0.5%;
+    padding: 2%;
     top: 0;
     width: 100%;
     left: 0;
@@ -13,16 +17,41 @@
 .menu a {
     color: white;
     padding: 1%;
+    font-size: 24px;
 }
 
 h1 {
     text-align: center;
-    padding-top: 1%;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    font-size: 2.5rem;
+    background-image: linear-gradient(to right, #33006F, #D5CBAB);
+    color: transparent;
+    background-clip: text;
+    box-shadow: #333 10px 10px 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    background-image: linear-gradient(to right, #33006F, #D5CBAB);
+    color: transparent;
+    background-clip: text;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2rem;;
 }
 
 #subtitle,
 #tagline {
     text-align: center;
+    margin-top: auto;
+    font-size: larger;
+    background-color: #d3d3d3;
+
 }
 
 /* Logo */
@@ -53,6 +82,7 @@ h1 {
     cursor: pointer;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 200px;
+    border-radius: 5px;
 }
 
 .gallery-item:hover {
