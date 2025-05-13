@@ -76,6 +76,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // finds the image link for display and returns it
 function getImage(text) {
+    console.log(text);
     var image_link = "";
     switch (text) {
         case 'Burger':
@@ -88,7 +89,7 @@ function getImage(text) {
         case 'Caesar Salad':
             image_link = '../../images/Foods/caesar_salad.jpg';
             break;
-        case 'Pepperoni Pizza Slice':
+        case 'Pepperoni Pizza':
             image_link = '../../images/Foods/pepperoni_pizza.jpg';
             break;
         case 'Fish and Chips':
