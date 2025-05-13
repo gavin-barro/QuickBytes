@@ -60,4 +60,31 @@ function get_food_items() {
     return food_items;
 }
 
+const bunSelect = document.getElementById("bun");
+const checkboxes = document.querySelectorAll(".checkbox");
+const totalPriceSpan = document.getElementById("totalPrice");
 
+function updateTotalPrice() {
+    let total = 5.00;
+
+    // Bun price
+    const selectedOption = bunSelect.options[bunSelect.selectedIndex];
+    const bunPrice = parseFloat(selectedOption.getAttribute("data-price")) || 0;
+    total += bunPrice;
+
+    // Toppings/fries prices
+    checkboxes.forEach(cb => {
+        if (cb.checked) {
+            total += parseFloat(cb.getAttribute("data-price")) || 0;
+        }
+    });
+
+    totalPriceSpan.textContent = `$${total.toFixed(2)}`;
+}
+
+// Add event listeners to trigger price updates
+bunSelect.addEventListener("change", updateTotalPrice);
+checkboxes.forEach(cb => cb.addEventListener("change", updateTotalPrice));
+
+// Initialize price on page load
+updateTotalPrice();
