@@ -89,38 +89,72 @@
             </div>
         </div>
 
-        <div id="burgerFormContainer">
-            <h2>Build Your Own Burger</h2>
-            <form id="burgerForm">
-                <h3>Bun Type</h3>
-                <label>Bun Type:
-                    <select name="bun" id="bun">
-                        <option value="white" data-price="0.00">White (Included)</option>
-                        <option value="wheat" data-price="0.50">Wheat (+$0.50)</option>
-                        <option value="gluten-free" data-price="1.00">Gluten-Free (+$1.00)</option>
-                    </select>
-                </label><br><br>
+        <div id="formWrapper">
+            <div id="burgerFormContainer">
+                <h2>Build Your Own Burger</h2>
+                <form id="burgerForm">
+                    <h3>Bun Type</h3>
+                    <label>Bun Type:
+                        <select name="bun" id="bun">
+                            <option value="white" data-price="0.00">White (Included)</option>
+                            <option value="wheat" data-price="0.50">Wheat (+$0.50)</option>
+                            <option value="gluten-free" data-price="1.00">Gluten-Free (+$1.00)</option>
+                        </select>
+                    </label><br><br>
 
-                <h3>Toppings</h3>
-                <label>Toppings:</label><br>
-                <input type="checkbox" class="checkbox" name="lettuce" value="lettuce" data-price="0.50"><label for="lettuce"> Lettuce (+$0.50)</label><br>
-                <input type="checkbox" class="checkbox" name="tomato" value="tomato" data-price="0.50"><label for="tomato"> Tomato (+$0.50)</label><br>
-                <input type="checkbox" class="checkbox" name="onion" value="onion" data-price="0.50"><label for="onion"> Onion (+$0.50)</label><br>
-                <input type="checkbox" class="checkbox" name="cheese" value="cheese" data-price="1.00"><label for="cheese"> Cheese (+$1.00)</label><br><br>
+                    <h3>Toppings</h3>
+                    <label>Toppings:</label><br>
+                    <input type="checkbox" class="checkbox" name="lettuce" value="lettuce" data-price="0.50"><label for="lettuce"> Lettuce (+$0.50)</label><br>
+                    <input type="checkbox" class="checkbox" name="tomato" value="tomato" data-price="0.50"><label for="tomato"> Tomato (+$0.50)</label><br>
+                    <input type="checkbox" class="checkbox" name="onion" value="onion" data-price="0.50"><label for="onion"> Onion (+$0.50)</label><br>
+                    <input type="checkbox" class="checkbox" name="cheese" value="cheese" data-price="1.00"><label for="cheese"> Cheese (+$1.00)</label><br><br>
 
-                <h3>Fries</h3>
-                <label>Toppings:</label><br>
-                <input type="checkbox" class="checkbox" name="fries" value="fries" data-price="2.00"><label for="fries"> Fries (+$2.00)</label><br>
-                <input type="checkbox" class="checkbox" name="cheese-fries" value="cheese-fries" data-price="2.50"><label for="cheese-fries"> Cheese Fries (+$2.50)</label><br>
-                <input type="checkbox" class="checkbox" name="bacon-cheese-fries" value="bacon-cheese-fries" data-price="3.00"><label for="bacon-cheese-fries"> Bacon Cheese Fries (+3.00)</label><br>
+                    <h3>Fries</h3>
+                    <label>Toppings:</label><br>
+                    <input type="checkbox" class="checkbox" name="fries" value="fries" data-price="2.00"><label for="fries"> Fries (+$2.00)</label><br>
+                    <input type="checkbox" class="checkbox" name="cheese-fries" value="cheese-fries" data-price="2.50"><label for="cheese-fries"> Cheese Fries (+$2.50)</label><br>
+                    <input type="checkbox" class="checkbox" name="bacon-cheese-fries" value="bacon-cheese-fries" data-price="3.00"><label for="bacon-cheese-fries"> Bacon Cheese Fries (+3.00)</label><br>
 
-                <p>Base Price: $5.00</p>
-                <p>Total Price: <span id="totalPrice">$5.00</span></p>
+                    <p>Base Price: $5.00</p>
+                    <p>Total Price: <span id="totalPrice">$5.00</span></p>
 
-                <button type="submit" id="place-order" class="place-order">Place Order</button>
-            </form>
+                    <button type="submit" id="place-order" class="place-order">Place Order</button>
+                </form>
+            </div>
+
+            <div id="pizzaFormContainer">
+                <h2>Build Your Own Pizza</h2>
+                <form id="pizzaForm">
+                    <h3>Crust Type</h3>
+                    <label>Crust Type:
+                        <select name="crust" id="crust">
+                            <option value="regular" data-price="0.00">Regular (Included)</option>
+                            <option value="thin" data-price="0.50">Thin (+$0.50)</option>
+                            <option value="stuffed" data-price="1.50">Stuffed (+$1.50)</option>
+                        </select>
+                    </label><br><br>
+
+                    <h3>Toppings</h3>
+                    <label>Toppings:</label><br>
+                    <input type="checkbox" name="pepperoni" value="pepperoni" data-price="1.00"><label for="pepperoni"> Pepperoni (+$1.00)</label><br>
+                    <input type="checkbox" name="ham" value="ham" data-price="0.75"><label for="ham"> Ham (+$0.75)</label><br>
+                    <input type="checkbox" name="mushrooms" value="mushrooms" data-price="0.50"><label for="mushrooms"> Mushrooms (+$0.50)</label><br>
+                    <input type="checkbox" name="sausage" value="sausage" data-price="1.25"><label for="sausage"> Sausage (+$1.25)</label><br>
+                    <input type="checkbox" name="olives" value="olives" data-price="0.75"><label for="olives"> Olives (+$0.75)</label><br>
+                    <input type="checkbox" name="bacon" value="bacon" data-price="1.50"><label for="bacon"> Bacon (+$1.50)</label><br><br>
+
+                    <h3>Extras</h3>
+                    <input type="checkbox" name="extra-cheese" value="extra-cheese" data-price="1.00"><label for="extra-cheese"> Extra Cheese (+$1.00)</label><br>
+                    <input type="checkbox" name="garlic-crust" value="garlic-crust" data-price="0.75"><label for="garlic-crust"> Garlic Crust (+$0.75)</label><br>
+
+                    <p>Base Price: $10.00</p>
+                    <p>Total Price: <span id="pizzaTotalPrice">$10.00</span></p>
+
+                    <button type="submit" class="place-order">Place Order</button>
+                </form>
+            </div>
+
         </div>
-
         <script src="../js/order.js"></script>
         <p><a href="#top">Back to top ↑</a></p>
     </main>
