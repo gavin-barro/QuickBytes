@@ -51,6 +51,7 @@ submit_info.addEventListener('submit', (ev)=> {
     arr.push({name: "mod_burger", price: total_price, toppings: burger_items.toString()});
 
     localStorage.setItem("order", JSON.stringify(arr));
+    alert("Burger has been added to the cart!");
 });
 
 
@@ -152,4 +153,5 @@ pizzaForm.addEventListener("submit", (ev) => {
     });
 
     localStorage.setItem("order", JSON.stringify(arr));
+    alert("Pizza has been added to the cart!");
 });
