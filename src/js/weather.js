@@ -21,7 +21,7 @@ async function getWeather() {
         let lon = position.coords.longitude;
 
         try {
-            // Reverse geocoding to get the location name
+            // Get location name
             let locationResponse = await fetch(
                 `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`
             );
@@ -37,7 +37,7 @@ async function getWeather() {
             let weatherData = await weatherResponse.json();
 
             let temperature = weatherData.current.temperature_2m;
-            let temperatureF = convertToFahrenheit(weatherData.current.temperature_2m);
+            let temperatureF = convertToFahrenheit(weatherData.current.temperature_2m).toFixed(1);;
             let weatherCode = weatherData.current.weathercode;
             let weatherDescription = weatherCodes[weatherCode]?.text || "Unknown";
             let emoji = weatherCodes[weatherCode]?.emoji || "";
