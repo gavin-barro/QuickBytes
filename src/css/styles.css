@@ -123,6 +123,13 @@ p {
     transition: background-color 0.2s;
 }
 
+.author-img {
+    width: 100px;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+}
+
 /* === Mobile Overrides (≤767px) === */
 /* Milestone 2: Responsive layout for small screens */
 
@@ -178,5 +185,12 @@ p {
 
     main {
         padding-top: 1rem;
+    }
+
+    .author-img {
+        width: 100px;
+        height: auto;
+        float: left;
+        margin-right: 10px;
     }
 }
