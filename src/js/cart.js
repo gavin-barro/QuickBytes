@@ -3,6 +3,7 @@ var total_price = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
     food_items = JSON.parse(localStorage.getItem("order"));
+    console.log("enter event listener")
     food_items.forEach(element => {
         item_name = element.name;
         if (item_name != "mod_burger") {
@@ -46,6 +47,9 @@ window.addEventListener("DOMContentLoaded", () => {
             order_item.appendChild(img);
             order_item.appendChild(item_info);
             order.appendChild(order_item);
+        }  else if (item_name == "mod_pizza") {
+            console.log("mod pizza")
+            modified_pizza(element)
         } else {
             modified_burger(element);
         }
@@ -93,6 +97,9 @@ function getImage(text) {
             image_link = '../../images/Foods/caesar_salad.jpg';
             break;
         case 'Pepperoni Pizza':
+            image_link = '../../images/Foods/pepperoni_pizza.jpg';
+            break;
+        case 'Pizza':
             image_link = '../../images/Foods/pepperoni_pizza.jpg';
             break;
         case 'Fish and Chips':
@@ -229,7 +236,7 @@ function modified_burger(element) {
 
     // Item name and toppings
     const item_name1 = document.createElement('h1');
-    item_name1.textContent = 'Modified Burger:' + element.toppings;
+    item_name1.textContent = 'Modified Burger: ' + element.toppings;
 
     // Item price
     const item_price1 = document.createElement('h2');
@@ -250,6 +257,51 @@ function modified_burger(element) {
     item_info.appendChild(remove_btn);
 
     // adding information to div element
+    order_item.appendChild(img);
+    order_item.appendChild(item_info);
+    order.appendChild(order_item);
+}
+
+function modified_pizza(element) {
+    // calculates total price
+    var item_price = parseFloat(element.price);
+    total_price += item_price;
+
+    // creating box for all item information
+    const order_item = document.createElement('div');
+    order_item.classList.add('cart-item');
+
+    // adds image
+    const img = document.createElement('img');
+    img.classList.add('cart-img');
+    img.src = getImage('Pizza');
+    img.alt = 'pizza';
+
+    // details on the left
+    const item_info = document.createElement('div');
+    item_info.classList.add('item-info');
+
+    // Item name and toppings
+    const item_name1 = document.createElement('h1');
+    item_name1.textContent = 'Modified Pizza: ' + element.toppings;
+
+    // Item price
+    const item_price1 = document.createElement('h2');
+    item_price1.textContent = '$ ' + item_price.toFixed(2);
+
+    // remove button
+    const remove_btn = document.createElement('button');
+    remove_btn.textContent = 'Remove';
+    remove_btn.classList.add('remove-btn');
+    remove_btn.addEventListener('click', (ev) => {
+        removeItem(food_items, element);
+    });
+
+    // appending information to box
+    item_info.appendChild(item_name1);
+    item_info.appendChild(item_price1);
+    item_info.appendChild(remove_btn);
+
     order_item.appendChild(img);
     order_item.appendChild(item_info);
     order.appendChild(order_item);

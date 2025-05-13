@@ -88,3 +88,64 @@ checkboxes.forEach(cb => cb.addEventListener("change", updateTotalPrice));
 
 // Initialize price on page load
 updateTotalPrice();
+
+
+// ===== Pizza Form Live Price Update =====
+
+const pizzaForm = document.getElementById("pizzaForm");
+const pizzaTotalPrice = pizzaForm.querySelector("#pizzaTotalPrice");
+
+// Update total price on change
+pizzaForm.addEventListener("change", updatePizzaPrice);
+
+function updatePizzaPrice() {
+    let total = 10.00; // base price
+
+    // Crust price
+    const crust = pizzaForm.querySelector("#crust");
+    const crustPrice = parseFloat(crust.options[crust.selectedIndex].dataset.price);
+    total += crustPrice;
+
+    // All checkboxes in this form
+    const checkboxes = pizzaForm.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(cb => {
+        if (cb.checked) {
+            total += parseFloat(cb.dataset.price);
+        }
+    });
+
+    pizzaTotalPrice.textContent = `$${total.toFixed(2)}`;
+}
+
+// ===== Pizza Form Submit Event =====
+
+pizzaForm.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+
+    const pizzaItems = [];
+    let total = 10.00;
+
+    const crustSelect = pizzaForm.querySelector("#crust");
+    const crustType = crustSelect.value;
+    const crustPrice = parseFloat(crustSelect.options[crustSelect.selectedIndex].dataset.price);
+    total += crustPrice;
+
+    pizzaItems.push(crustType);
+
+    const checkboxes = pizzaForm.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(cb => {
+        if (cb.checked) {
+            pizzaItems.push(cb.value);
+            total += parseFloat(cb.dataset.price);
+        }
+    });
+
+    let arr = get_food_items();
+    arr.push({
+        name: "mod_pizza",
+        price: total,
+        toppings: pizzaItems.toString()
+    });
+
+    localStorage.setItem("order", JSON.stringify(arr));
+});
