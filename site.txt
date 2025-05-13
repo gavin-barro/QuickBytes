@@ -1,1 +1,1 @@
-https://w3stu.cs.jmu.edu/barroga/cs343/project/src/html/index.html
+https://w3stu.cs.jmu.edu/barroga/cs343/project/index.html
