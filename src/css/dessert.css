@@ -15,6 +15,7 @@ body {
 .menu a {
     color: white;
     padding: 1%;
+    font-size: 24px;
 }
 
 #qblogo {

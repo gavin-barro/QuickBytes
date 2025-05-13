@@ -2,6 +2,31 @@ body {
     background-color: #D5CBAB;
 }
 
+.menu {
+    overflow: hidden;
+    background-color: #33006F;
+    position: fixed;
+    padding: 1%;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+.menu a {
+    color: white;
+    padding: 1%;
+    font-size: 24px;
+}
+
+/* Logo */
+#qblogo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 200px;
+    width: 200px;
+}
+
 .cart-items,
 .total {
     display: flex;

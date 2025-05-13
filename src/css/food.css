@@ -2,11 +2,21 @@ body {
     background-color: #D5CBAB;
 }
 
+h1 {
+    text-align: center;
+    font-size: 100px;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2rem;;
+}
+
 .menu {
     overflow: hidden;
     background-color: #33006F;
     position: fixed;
-    padding: 0.5%;
+    padding: 1%;
     top: 0;
     width: 100%;
     left: 0;
@@ -15,6 +25,7 @@ body {
 .menu a {
     color: white;
     padding: 1%;
+    font-size: 24px;
 }
 
 #qblogo {
@@ -49,6 +60,8 @@ div {
 
 .food-options {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 2vh;
     border: none;
@@ -62,10 +75,11 @@ div {
     align-items: center;
     border: 2px solid black;
     padding: 1vh 2vh;
-    background-color: lightgray;
+    background-color: #d3d3d3;
     cursor: pointer;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 200px;
+    border-radius: 5px;
 }
 
 .food-option:hover {
