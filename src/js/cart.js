@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log("enter event listener")
     food_items.forEach(element => {
         item_name = element.name;
-        if (item_name != "mod_burger") {
+        if (item_name != "mod_burger" && item_name != "mod_pizza") {
             var item_price = parseFloat(element.price);
             // calculates total price
             total_price += item_price;
@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         }  else if (item_name == "mod_pizza") {
             modified_pizza(element)
-        } else {
+        } else if (item_name == "mod_burger") {
             modified_burger(element);
         }
     });
@@ -83,7 +83,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // finds the image link for display and returns it
 function getImage(text) {
-    console.log(text);
     var image_link = "";
     switch (text) {
         case 'Burger':
@@ -293,7 +292,7 @@ function modified_pizza(element) {
     const img = document.createElement('img');
     img.classList.add('cart-img');
     img.src = getImage('Pizza');
-    img.alt = 'pizza';
+    img.alt = 'Modified Pizza';
 
     // details on the left
     const item_info = document.createElement('div');
