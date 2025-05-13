@@ -15,6 +15,10 @@ function add_item(arr, item, curr_price) {
     arr.push({ name: item_text, price: item_price });
 
     localStorage.setItem("order", JSON.stringify(arr));
+    
+    // Show alert when the item is added
+    alert(item_text + " has been added to the cart!");
+
 }
 
 const submit_info = document.getElementById('burgerForm');

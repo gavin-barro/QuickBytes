@@ -47,8 +47,8 @@ window.addEventListener("DOMContentLoaded", () => {
             order_item.appendChild(img);
             order_item.appendChild(item_info);
             order.appendChild(order_item);
+
         }  else if (item_name == "mod_pizza") {
-            console.log("mod pizza")
             modified_pizza(element)
         } else {
             modified_burger(element);
@@ -203,16 +203,30 @@ function removeItem(food_items, element) {
     window.location.reload(true);
 }
 
+// function submitOrder() {
+//     const total_item = document.getElementById('total');
+//     total_item.innerHTML = '';
+//     total_item.classList.add('cart-submit');
+
+//     const total_text = document.createElement('h1');
+//     total_item.textContent = 'Your order has been submitted';
+//     total_item.style.color = 'green';
+
+//     total_item.appendChild(order_item);
+// }
+
 function submitOrder() {
-    const total_item = document.getElementById('total');
-    total_item.innerHTML = '';
-    total_item.classList.add('cart-submit');
+    localStorage.setItem("order", JSON.stringify([])); 
 
-    const total_text = document.createElement('h1');
-    total_item.textContent = 'Your order has been submitted';
-    total_item.style.color = 'green';
+    const order = document.getElementById('cart-items');
+    order.innerHTML = ''; 
 
-    total_item.appendChild(order_item);
+    total_price = 0;
+
+    const total_price_text = document.querySelector('#total h2');
+    total_price_text.textContent = "$" + total_price.toFixed(2);
+
+    alert("Your order has been submitted!");
 }
 
 function modified_burger(element) {
