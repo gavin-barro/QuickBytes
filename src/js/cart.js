@@ -5,47 +5,50 @@ window.addEventListener("DOMContentLoaded", () => {
     food_items = JSON.parse(localStorage.getItem("order"));
     food_items.forEach(element => {
         item_name = element.name;
-        item_price = parseFloat(element.price);
-        // calculates total price
-        total_price += item_price;
+        if (item_name != "mod_burger") {
+            var item_price = parseFloat(element.price);
+            // calculates total price
+            total_price += item_price;
 
-        // creating box for all item information
-        const order_item = document.createElement('div');
-        order_item.classList.add('cart-item');
+            // creating box for all item information
+            const order_item = document.createElement('div');
+            order_item.classList.add('cart-item');
 
-        // adds image
-        const img = document.createElement('img');
-        img.classList.add('cart-img');
-        img.src = getImage(item_name);
-        img.alt = item_name;
+            // adds image
+            const img = document.createElement('img');
+            img.classList.add('cart-img');
+            img.src = getImage(item_name);
+            img.alt = item_name;
 
-        // adding other details
-        const item_info = document.createElement('div');
-        item_info.classList.add('item-info');
+            // adding other details
+            const item_info = document.createElement('div');
+            item_info.classList.add('item-info');
 
-        const item_name1 = document.createElement('h1');
-        item_name1.textContent = item_name;
+            const item_name1 = document.createElement('h1');
+            item_name1.textContent = item_name;
 
-        const item_price1 = document.createElement('h2');
-        item_price1.textContent = '$ ' + item_price.toFixed(2);
+            const item_price1 = document.createElement('h2');
+            item_price1.textContent = '$ ' + item_price.toFixed(2);
 
-        const remove_btn = document.createElement('button');
-        remove_btn.textContent = 'Remove';
-        remove_btn.classList.add('remove-btn'); 
-        remove_btn.addEventListener('click', (ev)=>{
-            removeItem(food_items, element);
-        });
-        
-        // appending information to box
-        item_info.appendChild(item_name1);
-        item_info.appendChild(item_price1);
-        item_info.appendChild(remove_btn);
+            const remove_btn = document.createElement('button');
+            remove_btn.textContent = 'Remove';
+            remove_btn.classList.add('remove-btn');
+            remove_btn.addEventListener('click', (ev) => {
+                removeItem(food_items, element);
+            });
 
-        // adding information to div element
-        order_item.appendChild(img);
-        order_item.appendChild(item_info);
-        order.appendChild(order_item);
+            // appending information to box
+            item_info.appendChild(item_name1);
+            item_info.appendChild(item_price1);
+            item_info.appendChild(remove_btn);
 
+            // adding information to div element
+            order_item.appendChild(img);
+            order_item.appendChild(item_info);
+            order.appendChild(order_item);
+        } else {
+            modified_burger(element);
+        }
     });
 
     // total box
@@ -60,7 +63,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // create submits button
     const submit_button = document.createElement('button');
-    submit_button.textContent='Submit';
+    submit_button.textContent = 'Submit';
     submit_button.classList.add('submit-btn');
     submit_button.addEventListener('click', ev => {
         submitOrder();
@@ -170,8 +173,8 @@ function getImage(text) {
         case 'Milkshake':
             image_link = '../../images/Desserts/milkshake.jpg';
             break;
-   }    
-   return image_link;
+    }
+    return image_link;
 }
 
 // removes an item from the order
@@ -194,8 +197,6 @@ function removeItem(food_items, element) {
 }
 
 function submitOrder() {
-    localStorage.removeItem("order");
-
     const total_item = document.getElementById('total');
     total_item.innerHTML = '';
     total_item.classList.add('cart-submit');
@@ -205,4 +206,51 @@ function submitOrder() {
     total_item.style.color = 'green';
 
     total_item.appendChild(order_item);
+}
+
+function modified_burger(element) {
+    // calculates total price
+    var item_price = parseFloat(element.price);
+    total_price += item_price;
+
+    // creating box for all item information
+    const order_item = document.createElement('div');
+    order_item.classList.add('cart-item');
+
+    // adds image
+    const img = document.createElement('img');
+    img.classList.add('cart-img');
+    img.src = getImage('Burger');
+    img.alt = 'burger';
+
+    // details on the left
+    const item_info = document.createElement('div');
+    item_info.classList.add('item-info');
+
+    // Item name and toppings
+    const item_name1 = document.createElement('h1');
+    item_name1.textContent = 'Modified Burger:' + element.toppings;
+
+    // Item price
+    const item_price1 = document.createElement('h2');
+    item_price1.textContent = '$ ' + item_price.toFixed(2);
+
+
+    // remove button
+    const remove_btn = document.createElement('button');
+    remove_btn.textContent = 'Remove';
+    remove_btn.classList.add('remove-btn');
+    remove_btn.addEventListener('click', (ev) => {
+        removeItem(food_items, element);
+    });
+
+    // appending information to box
+    item_info.appendChild(item_name1);
+    item_info.appendChild(item_price1);
+    item_info.appendChild(remove_btn);
+
+    // adding information to div element
+    order_item.appendChild(img);
+    order_item.appendChild(item_info);
+    order.appendChild(order_item);
 }

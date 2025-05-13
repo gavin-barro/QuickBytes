@@ -2,21 +2,62 @@ const foodItems = document.querySelectorAll(".order-btn");
 
 foodItems.forEach(item => {
     item.addEventListener("click", () => {
-        let food_items = [];
+        const food_items = get_food_items();
 
-        if (localStorage.getItem("order")) {
-            food_items = JSON.parse(localStorage.getItem("order"));
-        }
-
-        addItem(food_items, item);
+        add_item(food_items, item);
     });
 });
 
-function addItem(arr, item, curr_price) {
-    const itemName = item.getAttribute("data-food");
-    const itemPrice = parseFloat(item.getAttribute("data-price"));
+function add_item(arr, item, curr_price) {
+    const item_text = item.getAttribute("data-food");
+    const item_price = parseFloat(item.getAttribute("data-price"));
 
-    arr.push({ name: itemName, price: itemPrice });
+    arr.push({ name: item_text, price: item_price });
 
     localStorage.setItem("order", JSON.stringify(arr));
 }
+
+const submit_info = document.getElementById('burgerForm');
+submit_info.addEventListener('submit', (ev)=> {
+    const food_items = get_food_items();
+
+    const test = document.querySelector('#bun');
+    const bread = test.value;
+    const burger_items = []
+    var total_price = 5.00;
+
+    if (bread == "gluten-free") {
+        total_price += 1;
+    } else if (bread == "wheat") {
+        total_price += .5
+    }
+
+    burger_items.push(bread);
+
+    const check_boxes = document.querySelectorAll('.checkbox');
+    check_boxes.forEach(item => {
+        if (item.checked) {
+            to_add = item.getAttribute('name');
+            burger_items.push(to_add);
+            total_price += parseFloat(item.getAttribute('data-price'));
+        }
+    });
+
+    let arr = get_food_items();
+    arr.push({name: "mod_burger", price: total_price, toppings: burger_items.toString()});
+
+    localStorage.setItem("order", JSON.stringify(arr));
+});
+
+
+function get_food_items() {
+    let food_items = [];
+
+    if (localStorage.getItem("order")) {
+        food_items = JSON.parse(localStorage.getItem("order"));
+    }
+
+    return food_items;
+}
+
+
